@@ -6,6 +6,9 @@ from sections.serializers.section_serializers import SectionListSerializer, Sect
 from sections.serializers.content_serializers import ContentListSerializer, ContentSerializer
 from sections.paginators import SectionPaginator, ContentPaginator
 
+"""Add CRUD endpoints for Models: Section, Content
+(Добавлен CRUD для моделей: Section, Content)"""
+
 
 class SectionListAPIView(ListAPIView):
     serializer_class = SectionListSerializer

@@ -5,7 +5,8 @@ from config.settings import database_name, database_password, database_host, dat
 
 
 class Command(BaseCommand):
-    """Command need to create database"""
+    """Add command to create database
+    (Добавлена команда для создания базы данных)"""
 
     def handle(self, *args, **options):
         conn = psycopg2.connect(

@@ -8,9 +8,8 @@ load_dotenv()
 
 
 class Command(BaseCommand):
-    """Command used to create users with different level of permissions.
-    For admin user you must use your real email, it needs to receive registration email"""
-
+    """Add command to create Users with different permissions
+    (Добавлена команда для создания пользователей с разным уровнем доступа)"""
     def handle(self, *args, **options):
         admin = User.objects.create(
             email=os.getenv("PERSONAL_EMAIL"),

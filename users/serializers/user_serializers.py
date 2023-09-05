@@ -5,6 +5,9 @@ from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
 from users.models import User
 
+"""Add serializers for User views
+(Добавлены сериализаторы для контроллеров User)"""
+
 
 class UserSerializer(ModelSerializer):
     class Meta:

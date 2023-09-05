@@ -6,7 +6,10 @@ from users.serializers.user_serializers import UserCreateSerializer, UserSeriali
 
 from users.models import User
 
-"""Endpoints need to work with model User"""
+"""Add CRUD endpoints for Model User
+(Добавлен CRUD для модели User)"""
+
+
 class UserListAPIView(ListAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
