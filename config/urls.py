@@ -39,7 +39,7 @@ urlpatterns = [
                   path('admin/', admin.site.urls),
 
                   # app urls
-                  path('section/', include('sections.urls', namespace='sections')),
+                  path('', include('sections.urls', namespace='sections')),
                   path('users/', include('users.urls', namespace='users')),
 
                   # documentation urls
