@@ -41,6 +41,11 @@ python manage.py ccsu
 python manage.py loaddata sections.json
 ```
 
+8) Run command, to start application
+```bash
+python manage.py runserver 
+```
+
 Project Models
 
 Section with fields:

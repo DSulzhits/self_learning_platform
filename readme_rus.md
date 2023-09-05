@@ -41,6 +41,11 @@ python manage.py ccsu
 python manage.py loaddata sections.json
 ```
 
+8) Выполните команду для запуска приложения
+```bash
+python manage.py runserver
+```
+
 Модели используемые в проекте
 
 Section с полями:
