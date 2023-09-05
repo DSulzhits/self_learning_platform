@@ -13,6 +13,7 @@ class Section(models.Model):
     class Meta:
         verbose_name = 'Section'
         verbose_name_plural = 'Sections'
+        ordering = ['id']
 
 
 class Content(models.Model):
@@ -28,3 +29,4 @@ class Content(models.Model):
     class Meta:
         verbose_name = 'Content'
         verbose_name_plural = 'Content'
+        ordering = ['id']
