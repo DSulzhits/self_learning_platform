@@ -13,4 +13,3 @@ class ContentPaginator(SectionPaginator):
     """Add pagination for Content pages
     (Добавлена пагинация для страниц Content)"""
     page_size = 10
-

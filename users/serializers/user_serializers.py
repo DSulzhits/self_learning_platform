@@ -1,5 +1,3 @@
-from abc import ABC
-
 from rest_framework.serializers import ModelSerializer
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
