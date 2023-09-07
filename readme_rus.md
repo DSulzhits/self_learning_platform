@@ -5,7 +5,7 @@
 1) После настройки виртуального окружения установите зависимости из файла requirements.txt
 
 ```bash
-pip install - r requirements.txt
+pip install -r requirements.txt
 ```
 
 2) Заполните файл .env file согласно файла .env.sample

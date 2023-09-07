@@ -5,7 +5,7 @@ Virtual environment in this project: venv
 1) After starting virtual environment, install dependencies from file requirements.txt
 
 ```bash
-pip install - r requirements.txt
+pip install -r requirements.txt
 ```
 
 2) Fill .env file according to file .env.sample
