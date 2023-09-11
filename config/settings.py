@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'corsheaders',
     'drf_yasg',
+    'redis',
 
     # project apps
     'users',
@@ -86,13 +87,30 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-database_name = os.getenv('POSTGRESSQL_DB_NAME')
+
+# # LOCAL
+# database_name = os.getenv('POSTGRESSQL_DB_NAME')
+# database_user = os.getenv('POSTGRESSQL_USER')
+# database_password = os.getenv('POSTGRESSQL_PASSWORD')
+# database_port = os.getenv('POSTGRESSQL_PORT')
+# database_host = os.getenv('POSTGRESSQL_HOST')
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': database_name,
+#         'USER': database_user,
+#         'PORT': database_port,
+#         'PASSWORD': database_password,
+#         'HOST': database_host
+#     }
+# }
+
+# DOCKER
+database_name = os.getenv('POSTGRES_DATABASE_DOCKER')
 database_user = os.getenv('POSTGRESSQL_USER')
-database_password = os.getenv('POSTGRESSQL_PASSWORD')
-database_port = os.getenv('POSTGRESSQL_PORT')
-database_host = os.getenv('POSTGRESSQL_HOST')
-
-
+database_password = os.getenv('POSTGRES_PASSWORD_DOCKER')
+database_port = os.getenv('POSTGRESSQL_PORT_DOCKER')
+database_host = os.getenv('POSTGRESSQL_HOST_DOCKER')
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',

@@ -1,0 +1,51 @@
+version: '3'
+
+services:
+
+  redis:
+    image: redis
+    ports:
+      - '6379:6379'
+
+  postgres:
+    image: postgres
+    container_name: postgres_learning_platform_docker
+    env_file: .env
+    user: ${POSTGRESSQL_USER}
+    environment:
+      POSTGRES_USER: ${POSTGRESSQL_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD_DOCKER}
+      POSTGRES_DB: ${POSTGRES_DATABASE_DOCKER}
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: always
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+
+
+  api:
+    build: .
+    tty: true
+    command: >
+      bash -c "python manage.py makemigrations 
+      && python manage.py migrate
+      && python manage.py loaddata users.json
+      && python manage.py loaddata sections.json
+      && python manage.py runserver 0.0.0.0:8000"
+    ports:
+      - '8000:8000'
+    volumes:
+      - .:/code
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+
+volumes:
+  postgres_data:
+
