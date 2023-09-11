@@ -1,5 +1,5 @@
 Self Learning Platform service, including Sections (in this example different kind of animals) and Content (animal
-species).
+species). You can start this project with docker, or on local machine (default settings for start with docker).
 Virtual environment in this project: venv
 
 1) After starting virtual environment, install dependencies from file requirements.txt
@@ -11,40 +11,53 @@ pip install -r requirements.txt
 2) Fill .env file according to file .env.sample
 
 
-3) Create database with command
+FOR START IN DOCKER
+
+3) Start project with command
+
+```bash
+docker-compose up -d --build
+```
+
+
+FOR LOCAL START
+3) Change Database settings in file config\settings.py from settings labeled #DOCKER, to settings labeled #LOCAL
+
+4) Create database with command
 
 ```bash
 python manage.py ccdb
 ```
 
-4) Create migrations with command
+5) Create migrations with command
 
 ```bash
 python manage.py makemigrations
 ```
 
-5) Apply migrations with command
+6) Apply migrations with command
 
 ```bash
 python manage.py migrate
 ```
 
-6) Run command, to create Users
+7) Run command, to create Users
 
 ```bash
 python manage.py ccsu
 ```
 
-7) Run command, to fill the database, with fixture
+8) Run command, to fill the database, with fixture
 
 ```bash
 python manage.py loaddata sections.json
 ```
 
-8) Run command, to start application
+9) Run command, to start application
 ```bash
 python manage.py runserver 
 ```
+
 
 Project Models
 
