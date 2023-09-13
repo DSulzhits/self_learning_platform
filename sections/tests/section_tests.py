@@ -25,15 +25,18 @@ class SectionTestCase(APITestCase):
             'description': 'test_section_description_create'
         }
         response = self.client.post('/section/create/', data=data)
+        # print(response.json())
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         self.assertEqual(response.json()['title'], 'test_section_create')
 
     def test_section_delete(self):
         response = self.client.delete('/section/3/delete/')
+        # print(response)
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
 
     def test_section_detail(self):
         response = self.client.get('/section/4/')
+        # print(response.json())
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.json()['title'], 'test_section')
         self.assertEqual(response.json()['description'], 'test_description')
@@ -50,6 +53,7 @@ class SectionTestCase(APITestCase):
             'description': 'test_section_description_put'
         }
         response = self.client.put('/section/6/update/', data=data)
+        # print(response.json())
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.json()['title'], 'test_section_put')
         self.assertEqual(response.json()['description'], 'test_section_description_put')
