@@ -1,5 +1,5 @@
 Self Learning Platform service, including Sections (in this example different kind of animals) and Content (animal
-species). You can start this project with docker, or on local machine (default settings for start with docker), 
+species). You can start this project with docker, or on local machine (default settings for start on local machine),
 if you want to start tests your settings must be LOCAL.
 
 Virtual environment in this project: venv
@@ -13,17 +13,8 @@ pip install -r requirements.txt
 
 2) Fill .env file according to file .env.sample
 
-
-FOR START IN DOCKER
-
-3) Start project with command
-
-```bash
-docker-compose up -d --build
-```
-
-
 FOR LOCAL START
+
 3) Change Database settings in file config\settings.py from settings labeled #DOCKER, to settings labeled #LOCAL
 
 4) Create database with command
@@ -57,10 +48,18 @@ python manage.py loaddata sections.json
 ```
 
 9) Run command, to start application
+
 ```bash
 python manage.py runserver 
 ```
 
+FOR START IN DOCKER
+
+3) Start project with command
+
+```bash
+docker-compose up -d --build
+```
 
 Project Models
 
@@ -68,7 +67,6 @@ Section with fields:
 
 - title - section title
 - description - section description (may be empty)
-
 
 Content with fields:
 
@@ -85,9 +83,8 @@ User with fields:
 - phone - user phone (may be empty)
 - is_active - boolean field default=True
 
+Permissions
 
-
-Permissions 
 - Realized custom permission for User.role = MODERATOR
 - See the sections list and the content list can all authorised users
 - See detail info about sections or content can all authorised users
@@ -98,12 +95,12 @@ Permissions
 - Update user can AdminUser or Moderator or User (only his own account)
 - Delete user can only the AdminUser
 
-
 Pagination
+
 - Realised pagination for list of sections (3 item per page) and for list of content (10 items per page)
 
-
 Endpoints for model Section
+
 - List of Sections
 - Create a new Section
 - Detail info about Section
@@ -111,6 +108,7 @@ Endpoints for model Section
 - Delete the Section
 
 Endpoints for model Сontent
+
 - List of Сontent
 - Create a new Сontent
 - Detail info about Сontent
@@ -118,6 +116,7 @@ Endpoints for model Сontent
 - Delete the Сontent
 
 Endpoints for model User
+
 - List of Users
 - Create a new User
 - Detail info about User
@@ -125,7 +124,9 @@ Endpoints for model User
 - Delete the User
 
 Documentation
+
 - Documentation you can see here:
+
 ```bash
 http://127.0.0.1:8000/swagger/
 http://127.0.0.1:8000/redoc/
