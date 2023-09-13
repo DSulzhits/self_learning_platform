@@ -9,3 +9,4 @@ requests
 django-cors-headers
 drf-yasg
 redis
+coverage
