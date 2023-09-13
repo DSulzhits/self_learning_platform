@@ -2,8 +2,7 @@ from rest_framework.generics import ListAPIView, CreateAPIView, RetrieveAPIView,
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework.permissions import IsAuthenticated, IsAdminUser, AllowAny
 from sections.permissions import IsModerator
-from users.serializers.user_serializers import UserCreateSerializer, UserSerializer,\
-    UserTokenObtainPairSerializer
+from users.serializers.user_serializers import UserCreateSerializer, UserSerializer, UserTokenObtainPairSerializer
 
 from users.models import User
 
