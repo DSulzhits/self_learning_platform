@@ -53,6 +53,11 @@ python manage.py loaddata sections.json
 python manage.py runserver 
 ```
 
+10) If you want to run tests use command
+```bash
+coverage run --source='.' manage.py test 
+```
+
 FOR START IN DOCKER
 
 3) Start project with command
