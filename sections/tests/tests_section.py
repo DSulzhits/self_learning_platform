@@ -55,6 +55,7 @@ class SectionTestCase(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.json()['title'], 'test_section')
         self.assertEqual(response.json()['description'], 'test_description')
+        self.assertEqual(self.test_section.__str__(), 'test_section')
 
     def test_section_list(self):
         response = self.client.get('/section/')
