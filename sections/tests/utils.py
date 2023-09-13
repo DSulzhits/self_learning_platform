@@ -1,7 +1,7 @@
 from users.models import User, UserRoles
 
 
-def get_user():
+def get_admin_user():
     user = User.objects.create(
         email='tester@test1.com',
         role=UserRoles.MODERATOR,
