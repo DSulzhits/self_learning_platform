@@ -1,11 +1,14 @@
 Self Learning Platform service, including Sections (in this example different kind of animals) and Content (animal
-species). You can start this project with docker, or on local machine (default settings for start with docker).
+species). You can start this project with docker, or on local machine (default settings for start with docker), 
+if you want to start tests your settings must be LOCAL.
+
 Virtual environment in this project: venv
 
 1) After starting virtual environment, install dependencies from file requirements.txt
 
 ```bash
 pip install -r requirements.txt
+
 ```
 
 2) Fill .env file according to file .env.sample
