@@ -15,7 +15,10 @@ class UserTestCase(APITestCase):
     """
 
     def setUp(self) -> None:
-        """Basic setup"""
+        """
+        Basic setup
+        (Базовые настройки)
+        """
         self.user = get_admin_user()
         response = self.client.post('/users/token/', {"email": "tester@test1.com", "password": "qwerty"})
         self.access_token = response.json().get("access")
@@ -48,6 +51,7 @@ class UserTestCase(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.json()['email'], 'tester@test1.com')
         self.assertEqual(response.json()['role'], 'moderator')
+        self.assertEqual(self.user.__str__(), 'tester@test1.com')
 
     def test_users_list(self):
         response = self.client.get('/users/')
