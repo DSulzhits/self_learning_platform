@@ -1,8 +1,8 @@
 from rest_framework.test import APITestCase
 from rest_framework import status
 
-from sections.models import Section, Content
-from users.models import User, UserRoles
+from sections.models import Section
+from sections.tests.utils import get_user
 
 
 class SectionTestCase(APITestCase):
@@ -10,17 +10,8 @@ class SectionTestCase(APITestCase):
 
     def setUp(self) -> None:
         """Basic setup"""
-        self.user = User.objects.create(
-            email='tester@test1.com',
-            role=UserRoles.MODERATOR,
-            is_active=True,
-            is_superuser=True,
-            is_staff=True
-        )
-        self.user.set_password('qwerty')
-        self.user.save()
+        self.user = get_user()
         response = self.client.post('/users/token/', {"email": "tester@test1.com", "password": "qwerty"})
-        # print(response.json())
         self.access_token = response.json().get("access")
         self.client.credentials(HTTP_AUTHORIZATION=f'Bearer {self.access_token}')
         self.test_section = Section.objects.create(
