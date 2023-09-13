@@ -2,15 +2,23 @@ from rest_framework.test import APITestCase
 from rest_framework import status
 
 from sections.models import Section, Content
-from sections.tests.utils import get_user
+from sections.tests.utils import get_admin_user
 
 
 class ContentTestCase(APITestCase):
-    """Test for model Content"""
+    """
+    Test for model Content
+    work for both OVERALL and LOCAL launch
+    (Тесты для модели контент
+    работают как для ЛОКАЛЬНОГО так и ОБЩЕГО запуска
+    """
 
     def setUp(self) -> None:
-        """Basic setup"""
-        self.user = get_user()
+        """
+        Basic setup
+        (Базовые настройки)
+        """
+        self.user = get_admin_user()
         response = self.client.post('/users/token/', {"email": "tester@test1.com", "password": "qwerty"})
         self.access_token = response.json().get("access")
         self.client.credentials(HTTP_AUTHORIZATION=f'Bearer {self.access_token}')
