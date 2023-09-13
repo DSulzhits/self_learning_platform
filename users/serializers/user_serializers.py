@@ -28,12 +28,6 @@ class UserCreateSerializer(ModelSerializer):
         return instance
 
 
-class UserAuthSerializer(ModelSerializer):
-    class Meta:
-        model = User
-        fields = '__all__'
-
-
 class UserTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
     def get_token(cls, user):

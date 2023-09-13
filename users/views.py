@@ -2,7 +2,7 @@ from rest_framework.generics import ListAPIView, CreateAPIView, RetrieveAPIView,
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework.permissions import IsAuthenticated, IsAdminUser, AllowAny
 from sections.permissions import IsModerator
-from users.serializers.user_serializers import UserCreateSerializer, UserSerializer, UserAuthSerializer, \
+from users.serializers.user_serializers import UserCreateSerializer, UserSerializer,\
     UserTokenObtainPairSerializer
 
 from users.models import User
@@ -25,13 +25,13 @@ class UserCreateAPIView(CreateAPIView):
 
 class UserRetrieveAPIView(RetrieveAPIView):
     queryset = User.objects.all()
-    serializer_class = UserAuthSerializer
+    serializer_class = UserSerializer
     permission_classes = [IsAuthenticated]
 
 
 class UserUpdateAPIView(UpdateAPIView):
     queryset = User.objects.all()
-    serializer_class = UserAuthSerializer
+    serializer_class = UserSerializer
     permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
