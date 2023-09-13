@@ -34,7 +34,6 @@ class SectionTestCase(APITestCase):
     (если вы хотите запустить ОБЩИЙ тест из терминала)
     """
 
-
     def test_section_create(self):
         data = {
             'title': 'test_section_create',
