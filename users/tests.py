@@ -4,8 +4,8 @@ from rest_framework import status
 from sections.tests.utils import get_user
 
 
-class ContentTestCase(APITestCase):
-    """Test for model Content"""
+class UserTestCase(APITestCase):
+    """Test for model User"""
 
     def setUp(self) -> None:
         """Basic setup"""
