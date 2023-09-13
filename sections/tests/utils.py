@@ -12,3 +12,16 @@ def get_admin_user():
     user.set_password('qwerty')
     user.save()
     return user
+
+
+def get_member_user():
+    user = User.objects.create(
+        email='tester_member@test1.com',
+        role=UserRoles.MEMBER,
+        is_active=True,
+        is_superuser=False,
+        is_staff=False
+    )
+    user.set_password('qwerty')
+    user.save()
+    return user
