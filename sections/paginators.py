@@ -13,3 +13,9 @@ class ContentPaginator(SectionPaginator):
     """Add pagination for Content pages
     (Добавлена пагинация для страниц Content)"""
     page_size = 10
+
+
+class TestsPaginator(SectionPaginator):
+    """Add pagination for Tests pages
+    (Добавлена пагинация для страниц Tests)"""
+    page_size = 5

@@ -3,7 +3,7 @@ from rest_framework.routers import DefaultRouter
 from sections.apps import SectionsConfig
 from sections.views import SectionListAPIView, SectionCreateApiView, SectionRetrieveAPIView, SectionUpdateAPIView, \
     SectionDestroyAPIView, ContentListAPIView, ContentCreateApiView, ContentRetrieveAPIView, ContentUpdateAPIView, \
-    ContentDestroyAPIView
+    ContentDestroyAPIView, TestsListAPIView, TestQuestionAPIView
 from django.views.decorators.cache import never_cache
 
 app_name = SectionsConfig.name
@@ -25,4 +25,7 @@ urlpatterns = [
     path('content/<int:pk>/update/', never_cache(ContentUpdateAPIView.as_view()), name='content_update'),
     path('content/<int:pk>/delete/', never_cache(ContentDestroyAPIView.as_view()), name='content_delete'),
 
+    # Tests urlpatterns
+    path('tests/', TestsListAPIView.as_view(), name='tests_list'),
+    path('tests/test/', TestQuestionAPIView.as_view(), name='test'),
 ] + router.urls
