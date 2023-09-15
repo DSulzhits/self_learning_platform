@@ -24,6 +24,6 @@ class ContentAdmin(admin.ModelAdmin):
 class TestsAdmin(admin.ModelAdmin):
     """Register Content model in Admin
     (Модель Content зарегистрирована в админке)"""
-    list_display = ('id', 'section', 'description', 'question', 'answer',)
-    list_filter = ('id', 'section',)
-    ordering = ('id', 'section',)
+    list_display = ('id', 'test_section', 'description', 'question', 'answer',)
+    list_filter = ('id', 'test_section',)
+    ordering = ('id', 'test_section',)
