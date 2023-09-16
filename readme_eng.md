@@ -54,6 +54,7 @@ python manage.py runserver
 ```
 
 10) If you want to run tests use command
+
 ```bash
 coverage run --source='.' manage.py test 
 ```
@@ -78,6 +79,13 @@ Content with fields:
 - section - related to section
 - title - content title
 - content - content
+
+Tests with fields:
+
+- test_section - related to section
+- description - test description
+- question - test question
+- answer - correct answer
 
 User with fields:
 
@@ -119,6 +127,11 @@ Endpoints for model Сontent
 - Detail info about Сontent
 - Update the Сontent
 - Delete the Сontent
+
+Endpoints for model Tests
+
+- List of Tests
+- Retrieve question/Give an answer
 
 Endpoints for model User
 

@@ -79,6 +79,13 @@ Content с полями:
 - title - название содержимого
 - content - содержимое
 
+Tests с полями:
+
+- test_section - отношение к секции
+- description - описание теста
+- question - вопрос теста
+- answer - верный ответ
+
 User с полями:
 
 - email - электронная почта пользователя
@@ -120,6 +127,11 @@ User с полями:
 - Detail info about Сontent (Подробная информация о Содержимом)
 - Update the Сontent (Обновить/Изменить Содержимое)
 - Delete the Сontent (Удалить Содержимое)
+
+Эндпоинты модели Tests (Тесты)
+
+- List of Tests (Список Тестов)
+- Retrieve question/Give an answer (Получение теста/Отправка ответа)
 
 Эндпоинты модели User (Пользователь)
 
