@@ -16,4 +16,4 @@ class TestsQuestionSerializer(ModelSerializer):
 
     class Meta:
         model = Tests
-        fields = ('id', 'test_section', 'question', 'answer',)
+        fields = ('id', 'test_section', 'question',)
