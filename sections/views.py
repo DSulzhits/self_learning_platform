@@ -89,6 +89,6 @@ class TestQuestionRetrieveAPIView(RetrieveAPIView):
         answers = [test.answer for test in Tests.objects.all()]
         answer = answers[self.kwargs.get('pk') - 1].lower()
         user_answer = request.data.get('user_answer')
-        user_answer.lower()
+        user_answer = user_answer.lower()
         is_correct = user_answer == answer
         return Response({'is_correct': is_correct})
