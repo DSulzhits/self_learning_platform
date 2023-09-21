@@ -105,7 +105,7 @@ Permissions
 - See the users list can AdminUser or Moderator
 - Create new users can all users
 - See detail info about user all authorised users
-- Update user can AdminUser or Moderator or User (only his own account)
+- Update user can only user himself
 - Delete user can only the AdminUser
 
 Pagination
