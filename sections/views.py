@@ -3,7 +3,7 @@ from rest_framework.response import Response
 
 from sections.models import Section, Content, Tests
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
-from sections.permissions import IsModerator
+from sections.permissions import IsModerator, IsSuperuser
 from sections.serializers.section_serializers import SectionListSerializer, SectionSerializer
 from sections.serializers.content_serializers import ContentListSerializer, ContentSerializer
 from sections.serializers.tests_serializers import TestsSerializer, TestsQuestionSerializer
@@ -40,7 +40,7 @@ class SectionUpdateAPIView(UpdateAPIView):
 class SectionDestroyAPIView(DestroyAPIView):
     serializer_class = SectionSerializer
     queryset = Section.objects.all()
-    permission_classes = [IsAuthenticated, IsAdminUser]
+    permission_classes = [IsAuthenticated, IsSuperuser]
 
 
 class ContentListAPIView(ListAPIView):
@@ -70,7 +70,7 @@ class ContentUpdateAPIView(UpdateAPIView):
 class ContentDestroyAPIView(DestroyAPIView):
     serializer_class = ContentSerializer
     queryset = Content.objects.all()
-    permission_classes = [IsAuthenticated, IsAdminUser]
+    permission_classes = [IsAuthenticated, IsSuperuser]
 
 
 class TestsListAPIView(ListAPIView):

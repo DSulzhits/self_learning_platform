@@ -1,7 +1,7 @@
 from rest_framework.generics import ListAPIView, CreateAPIView, RetrieveAPIView, UpdateAPIView, DestroyAPIView
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework.permissions import IsAuthenticated, IsAdminUser, AllowAny
-from sections.permissions import IsModerator
+from sections.permissions import IsModerator, IsSuperuser
 from users.serializers.user_serializers import UserCreateSerializer, UserSerializer, UserTokenObtainPairSerializer
 
 from users.models import User
@@ -41,7 +41,7 @@ class UserUpdateAPIView(UpdateAPIView):
 class UserDestroyAPIView(DestroyAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    permission_classes = [IsAuthenticated, IsAdminUser]
+    permission_classes = [IsAuthenticated, IsSuperuser]
 
 
 class UserTokenObtainPairView(TokenObtainPairView):

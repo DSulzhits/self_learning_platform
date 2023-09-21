@@ -29,7 +29,7 @@ class Command(BaseCommand):
             first_name='Moderator',
             last_name='Moderatov',
             role='moderator',
-            is_staff=False,
+            is_staff=True,
             is_superuser=False,
             is_active=True
         )
