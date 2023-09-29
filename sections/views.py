@@ -3,7 +3,7 @@ from rest_framework.response import Response
 
 from sections.models import Section, Content, Tests
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
-from sections.permissions import IsModerator, IsSuperuser
+from sections.permissions import IsModerator
 from sections.serializers.section_serializers import SectionListSerializer, SectionSerializer
 from sections.serializers.content_serializers import ContentListSerializer, ContentSerializer
 from sections.serializers.tests_serializers import TestsSerializer, TestsQuestionSerializer
